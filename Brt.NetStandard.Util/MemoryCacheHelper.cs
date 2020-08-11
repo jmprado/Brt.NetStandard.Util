@@ -42,5 +42,19 @@ namespace Brt.NetStandard.Util
 
             return cacheEntry;
         }
+
+        public async Task ClearCache(object key)
+        {
+            SemaphoreSlim mylock = _locks.GetOrAdd(key, k => new SemaphoreSlim(1, 1));
+            await mylock.WaitAsync();
+            try
+            {
+                _cache.Remove(key);
+            }
+            finally
+            {
+                mylock.Release();
+            }
+        }
     }
 }
