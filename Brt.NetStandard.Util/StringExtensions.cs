@@ -8,7 +8,17 @@ namespace Brt.NetStandard.Util
     {
         private static CultureInfo _cultureProvider = CultureInfo.InvariantCulture;
         private static bool[] _lookup = CreateLookupTable();
-        private static string[] _formatosData = { "dd-MM-yyyy", "dd-MM-yyyy HH:mm", "dd-MM-yyyy HH:mm:ss", "yyyy-MM-dd", "yyyy-MM-dd HH:mm", "yyyy-MM-dd HH:mm:ss", "dd/MM/yyyy", "dd/MM/yyyy HH:mm", "dd/MM/yyyy HH:mm:ss" };
+        private static string[] _formatosData = { "dd-MM-yyyy", 
+            "dd-MM-yyyy HH:mm", 
+            "dd-MM-yyyy HH:mm:ss", 
+            "yyyy-MM-dd", 
+            "yyyy-MM-dd HH:mm", 
+            "yyyy-MM-dd HH:mm:ss", 
+            "dd/MM/yyyy", 
+            "dd/MM/yyyy HH:mm", 
+            "dd/MM/yyyy HH:mm:ss",
+            "dd.MM.yyyy",
+            "dd.MM.yyyy HH:mm:ss"};
 
         public static string RemoveDiacritics(this string value)
         {
